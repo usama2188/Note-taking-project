@@ -1,0 +1,23 @@
+.card{
+    margin: auto;
+}
+#noteOut{
+    margin-top: 1rem;
+}
+
+#output{
+    margin: auto;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+#noteOUt{
+    display: inline;
+}
+
+nav{
+    margin-bottom: 20px;
+}
