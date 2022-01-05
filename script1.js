@@ -62,29 +62,35 @@ function deleteNote(index) {
 
 //SEARCH IN NOTES
 function srch() {
-    location.reload();
+    
     let srchInp = document.getElementById("srchInp").value
     let showNotesArr = JSON.parse(localStorage.getItem("notes"))
-
+    let found = false
     if (srchInp.slice(0, 1) == "") { //CHECK FIRST LETTER OF SPACE CONTAIN EMPTY SPACE OR NOT
         alert("Enter note to be search")
         srchInp = ""
     }
     else {
-
+        
         if (showNotesArr == undefined) {//CONDITION TO CHECK LOCALSTORAGE IS EMPTY OR NOT
             alert("No note is added")
         }
         else {
             //FIND SEATCHED ELEMENT IN LOCALSOTRAGE ARRAY
             showNotesArr.forEach(function (element, index) {
-
                 if (element.includes(srchInp)) {
-                    console.log(index)
-                    document.getElementById(index).style.border = "1px solid red"
+
+                    document.getElementById(index).style.border = "1px solid red";
+                    found = true;
                 }
             });
+            if (found == false) //ELEMENT FOUND OR NOT
+            {
+                alert("Not Found......!")
+            }
         }
     }
-
+}
+function loadLocation() {
+    location.reload();
 }
